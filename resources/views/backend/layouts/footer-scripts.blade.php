@@ -1,3 +1,6 @@
+
+<script src="{{ asset('js/app.js') }}"></script>
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -12,8 +15,8 @@
 <script src="{{ asset('backend/vendor/chart.js/Chart.min.js') }}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
-<script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script>
+{{--<script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>--}}
+{{--<script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script>--}}
 
 <!-- Page file input scripts -->
 <script src="{{ asset('backend/vendor/bootstrap-fileinput/js/plugins/piexif.min.js') }}"></script>

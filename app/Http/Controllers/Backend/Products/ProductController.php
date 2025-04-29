@@ -118,6 +118,7 @@ class ProductController extends Controller
             $product->tags()->sync($request->tags);
 
             if ($request->images && count($request->images) > 0) {
+
                 $this->uploadMultiImage($request->images, $product->slug, 'products', $product,$product->media()->count() + 1);
             }
 
@@ -136,11 +137,11 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         if (!auth()->user()->ability('admin', 'delete_products')) {
-            return redirect('admin/index');
+            return redirect('admin/');
         }
 
         if ($product->media()->count() > 0) {
-          $this->deleteImages($product,'products');
+          $this->deleteImages($product,'products','file_name');
         }
         $product->delete();
 

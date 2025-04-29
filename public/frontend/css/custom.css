@@ -1,1 +1,33 @@
 /* your styles go here */
+
+.avatar-with-badge {
+    position: relative;
+    display: inline-block; /* عشان نعرف نتحكم في مكانه بالنسبة للصورة */
+}
+
+.badge-counter {
+    position: absolute;
+    top: -5px; /* قللنا عشان يطلع فوق أقل */
+    right: -5px; /* قللنا عشان يجي على الطرف أقل */
+    border-radius: 50%; /* عشان تبقى دائرية */
+    width: 16px; /* عرض أصغر */
+    height: 16px; /* ارتفاع أصغر عشان تبقى دائرية فعلًا */
+    line-height: 16px; /* عشان الرقم يتوسط عموديًا */
+    text-align: center; /* عشان الرقم يتوسط أفقيًا */
+    padding: 0; /* مش محتاجين مساحة داخلية كتير دلوقتي */
+    background-color: red; /* أو اللون اللي تختاره */
+    color: white; /* لون الكتابة */
+    font-size: 10px; /* حجم الخط زي ما هو أو ممكن تصغره شوية لو عايز */
+}
+.withoutAfter::after {
+    display: none;
+}
+.notification-dropdown {
+    left: -19rem !important;
+}
+.notification-dropdown::before {
+    left: 19.50rem !important;
+}
+
+
+

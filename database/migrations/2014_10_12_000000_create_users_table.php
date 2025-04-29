@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('user_image')->nullable();
             $table->unsignedTinyInteger('status')->default(0);
             $table->rememberToken();
+            $table->boolean('receive_emails')->default(true);
             $table->timestamps();
         });
     }

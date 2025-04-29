@@ -14,16 +14,16 @@
 
     <title> @yield('title') </title>
 
-     @include('backend.auth.layouts.head-styles')
+    @include('backend.auth.layouts.head-styles')
 
 </head>
 
 <body class="bg-gradient-primary">
 
-    @yield('content')
+@yield('content')
 
-    <!-- Bootstrap core JavaScript-->
-    @include('backend.auth.layouts.footer-script')
+<!-- Bootstrap core JavaScript-->
+@include('backend.auth.layouts.footer-script')
 
 </body>
 

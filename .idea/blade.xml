@@ -66,6 +66,7 @@
       <data directive="@endunless" />
       <data directive="@endverbatim" />
       <data directive="@endwhile" />
+      <data directive="@entangle" injection="true" prefix="&lt;?php \print_r(" suffix="); ?&gt;" />
       <data directive="@env" injection="true" prefix="&lt;?php&#10;if(app()-&gt;environment(" suffix=")): ?&gt;" />
       <data directive="@error" injection="true" prefix="&lt;?php&#10;$__errorArgs = [" suffix="];&#10;$__bag = $errors-&gt;getBag($__errorArgs[1] ?? 'default');&#10;if ($__bag-&gt;has($__errorArgs[0])) :&#10;if (isset($message)) { $__messageOriginal = $message; }&#10;$message = $__bag-&gt;first($__errorArgs[0]); ?&gt;" />
       <data directive="@extends" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;make(" suffix=", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))-&gt;render(); ?&gt;" />
@@ -85,6 +86,9 @@
       <data directive="@js" injection="true" prefix="&lt;?php _bladeDirective(" suffix="); ?&gt;" />
       <data directive="@json" injection="true" prefix="&lt;?php&#10;echo json_encode(" suffix=") ?&gt;" />
       <data directive="@lang" injection="true" prefix="&lt;?php&#10;echo app('translator')-&gt;get(" suffix="); ?&gt;" />
+      <data directive="@livewire" injection="true" prefix="&lt;?php \Livewire\Livewire::mount(" suffix="); ?&gt;" />
+      <data directive="@livewireScripts" />
+      <data directive="@livewireStyles" />
       <data directive="@method" injection="true" prefix="&lt;?php&#10;echo method_field(" suffix="); ?&gt;" />
       <data directive="@once" />
       <data directive="@overwrite" />
@@ -110,6 +114,7 @@
       <data directive="@stop" />
       <data directive="@style" injection="true" prefix="style=&quot;&lt;?php&#10;echo \Illuminate\Support\Arr::toCssStyles(" suffix=") ?&gt;&quot;" />
       <data directive="@switch" injection="true" prefix="&lt;?php&#10;switch(" suffix="): ?&gt;" />
+      <data directive="@this" />
       <data directive="@unless" injection="true" prefix="&lt;?php&#10;if (! (" suffix=")): ?&gt;" />
       <data directive="@unset" injection="true" prefix="&lt;?php&#10;unset(" suffix="); ?&gt;" />
       <data directive="@verbatim" />

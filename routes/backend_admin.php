@@ -4,6 +4,8 @@ use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\CustomerAddress\CustomerAddressController;
 use App\Http\Controllers\Backend\Customers\CustomerController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Orders\OrderController;
+use App\Http\Controllers\Backend\PaymentMethod\PaymentMethodController;
 use App\Http\Controllers\Backend\ProductCategories\ProductCategoriesController;
 use App\Http\Controllers\Backend\ProductCoupons\ProductCouponController;
 use App\Http\Controllers\Backend\ProductReviews\ProductReviewController;
@@ -99,6 +101,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         //////////   Shipping Companies Routes  //////////////////////////////////////////////////////////////
         Route::resource('shipping_companies', ShippingCompanyController::class);
+
+        Route::resource('payment_methods', PaymentMethodController::class);
+
+        //////////    Customers Orders Routes  //////////////////////////////////////////////////////////////
+        ///
+        Route::resource('orders', OrderController::class);
+
+
+
 
 
     });

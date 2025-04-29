@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -15,28 +15,26 @@
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.ico') }}">
 
 
-
     {{--  Head Styles  --}}
 
     @include('frontend.layouts.head-styles')
 
+    @livewireStyles
+    {{-- CSS and other staff --}}
 
-  </head>
-  <body>
-    <div class="page-holder">
+</head>
+<body>
+<div class="page-holder">
 
-      <!-- navbar-->
+    <!-- navbar-->
     @include('frontend.layouts.navbar')
 
 
-      <!--  Modal -->
-
-    @include('frontend.layouts.model')
-
+    <!--  Modal -->
+    <livewire:frontend.product-modal-shared/>
 
 
-
-      <!-- HERO SECTION-->
+    <!-- HERO SECTION-->
 
     @yield('content')
 
@@ -45,10 +43,12 @@
     @include('frontend.layouts.footer')
 
 
-      <!-- JavaScript files-->
+    <!-- JavaScript files-->
+    @livewireScripts
+    <x-livewire-alert::scripts/>
+    @include('sweetalert::alert')
     @include('frontend.layouts.footer-scripts')
+</div>
 
-
-    </div>
-  </body>
+</body>
 </html>

@@ -2,16 +2,23 @@
 
 namespace App\Models;
 
-use App\Models\Product;
+
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Tag extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory, Sluggable, SearchableTrait;
     protected $guarded = [];
+
+    protected $searchable = [
+        'columns' => [
+            'tags.name' => 10, // Higher weight for name
+        ]
+    ];
 
     public function sluggable(): array
     {
@@ -21,6 +28,7 @@ class Tag extends Model
             ]
         ];
     }
+
     public function getRouteKeyName()
     {
         return 'slug';

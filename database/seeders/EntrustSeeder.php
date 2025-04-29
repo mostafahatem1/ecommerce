@@ -31,7 +31,7 @@ class EntrustSeeder extends Seeder
         $customer->attachRole($customerRole);
 
 
-        User::factory()->count(100)->hasAddresses(1)->create();
+        User::factory()->count(1000)->hasAddresses(1)->create();
 
         $manageMain = Permission::create(['name' => 'main', 'display_name' => 'Main', 'route' => '/', 'module' => '/', 'as' => 'index', 'icon' => 'fas fa-home', 'parent' => '0', 'parent_original' => '0', 'sidebar_link' => '1', 'appear' => '1', 'ordering' => '1',]);
         $manageMain->parent_show = $manageMain->id; $manageMain->save();
@@ -44,12 +44,17 @@ class EntrustSeeder extends Seeder
 
         createPermissionGroup('customers', 'fas fa-users', 30);
         createPermissionGroup('Customer Addresses', 'fas fa-map-marked-alt', 35);
+        createPermissionGroup('Orders', 'fas fa-map-marked-alt', 40);
 
-        createPermissionGroup('Countries', 'fas fa-globe', 45);
+
+        createPermissionGroup('Countries', 'fas fa-shopping-basket', 45);
         createPermissionGroup('States', 'fas fa-map-marker-alt', 50);
         createPermissionGroup('Cities', 'fas fa-university', 55);
 
         createPermissionGroup('Shipping Companies', 'fas fa-truck', 90);
+
+        createPermissionGroup('Payment Methods', 'fas fa-dollar-sign', 100);
+
 
 
         // SUPERVISORS

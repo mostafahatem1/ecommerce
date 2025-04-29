@@ -9,18 +9,26 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "beyondcode/laravel-websockets": "1.14.1",
+        "carlos-meneses/laravel-mpdf": "^2.1",
         "cviebrock/eloquent-sluggable": "^8.0",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "2.7",
         "intervention/imagecache": "*",
-        "laravel/framework": "^8.12",
+        "jantinnerezo/livewire-alert": "^3.0",
+        "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "league/omnipay": "^3.2",
+        "livewire/livewire": "2.5",
         "mindscms/entrust": "^2.6",
+        "mindscms/laravelshoppingcart": "^2.1",
         "nicolaslopezj/searchable": "^1.13",
+        "omnipay/paypal": "^3.0",
         "predis/predis": "^2.3",
+        "pusher/pusher-php-server": "7.2.7",
         "realrashid/sweet-alert": "^7.3"
     },
     "require-dev": {
@@ -34,7 +42,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "extra": {
         "laravel": {

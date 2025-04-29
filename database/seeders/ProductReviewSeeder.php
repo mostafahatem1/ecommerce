@@ -20,7 +20,7 @@ class ProductReviewSeeder extends Seeder
 
         Product::all()->each(function ($product) {
             $product->reviews()->createMany(
-                ProductReview::factory(rand(1, 3))->make()->toArray()
+                ProductReview::factory()->count(5)->make()->toArray()
             );
         });
 

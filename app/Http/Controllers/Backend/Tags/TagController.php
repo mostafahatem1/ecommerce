@@ -16,8 +16,7 @@ class TagController extends Controller
         if (!auth()->user()->ability('admin', 'manage_tags, show_tags')) {
             return redirect('admin/');
         }
-        $tags =   Tag::select(['id', 'name', 'status','slug']) // اسحب الأعمدة اللي فعلاً محتاجها فقط
-        ->withCount('products')// Use the relationship count
+        $tags =   Tag::with('products')
             ->when(\request()->keyword != null, function ($query) {
             $query->search(\request()->keyword);
         })

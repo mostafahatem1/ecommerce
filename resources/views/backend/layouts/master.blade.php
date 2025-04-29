@@ -18,65 +18,68 @@
 
     @include('backend.layouts.head-styles')
 
+    @livewireStyles
 
 
 </head>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        @include('backend.layouts.sidebar')
-        <!-- End of Sidebar -->
+    <!-- Sidebar -->
+    @include('backend.layouts.sidebar')
+    <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+        <!-- Main Content -->
+        <div id="content">
 
-                <!-- Navbar -->
-                @include('backend.layouts.navbar')
-                <!-- End of Navbar -->
+            <!-- Navbar -->
+            @include('backend.layouts.navbar')
+            <!-- End of Navbar -->
 
-                <!-- Begin Page Content -->
+            <!-- Begin Page Content -->
 
-              @include('backend.layouts.flash')
-                @yield('content')
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            @include('backend.layouts.footer')
-            <!-- End of Footer -->
+            @include('backend.layouts.flash')
+            @yield('content')
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        @include('backend.layouts.footer')
+        <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
 
 
 
 
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Logout Modal-->
-    @include('backend.layouts.model')
+<!-- Logout Modal-->
+@include('backend.layouts.model')
 
-    <!--   JavaScript-->
+<!--   JavaScript-->
+@livewireScripts
 
-    @include('backend.layouts.footer-scripts')
+@include('backend.layouts.footer-scripts')
 
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
+
 </body>
 
 </html>

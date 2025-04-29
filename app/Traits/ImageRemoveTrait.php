@@ -13,6 +13,7 @@ trait ImageRemoveTrait
         $coverImagePath = public_path('backend/uploads/' . $folder . '/' . $model->$imageColumn);
         if ($model->$imageColumn !== null && File::exists($coverImagePath)) {
             unlink($coverImagePath);
+           $model->update([$imageColumn => null]);
         }
 
         // Delete all media images if they exist

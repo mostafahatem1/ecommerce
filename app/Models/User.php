@@ -14,11 +14,11 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable ,EntrustUserWithPermissionsTrait,SearchableTrait;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    public function receivesBroadcastNotificationsOn(): string
+    {
+        return 'App.Models.User.' . $this->id;
+    }
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -83,6 +83,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function addresses(): HasMany
     {
         return $this->hasMany(UserAddress::class);
+
     }
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+
 }
 

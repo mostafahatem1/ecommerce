@@ -36,7 +36,7 @@
                 @forelse($tags as $tag)
                     <tr>
                         <td>{{ $tag->name }}</td>
-                        <td>{{ $tag->products_count }}</td>
+                        <td>{{ $tag->products->count() }}</td>
                         <td>{{ $tag->status() }}</td>
                         <td>{{ $tag->created_at }}</td>
                         <td>
